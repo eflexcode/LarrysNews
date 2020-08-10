@@ -35,11 +35,44 @@
             android:layout_height="match_parent"
             android:scrollIndicators="end"
             android:scrollbarStyle="insideInset"
-            android:scrollbars="horizontal"
-            tools:listitem="@layout/news_item" />
+            android:scrollbars="horizontal" />
 
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:src="@drawable/fire"
+        android:id="@+id/fire"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:text="Unable to connect please check your network"
+        android:layout_below="@id/fire"
+        android:id="@+id/fireMessage"
+        android:visibility="gone"
+        android:textSize="20sp"
+        android:gravity="center"/>
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/fireMessage"
+        android:layout_centerHorizontal="true"
+        android:textColor="#fff"
+        android:onClick="TryAgain"
+        android:visibility="gone"
+        android:id="@+id/fireTry"
+        android:layout_marginTop="10dp"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:background="@drawable/try_backgrond"
+        android:text="Try again"/>
 
 </RelativeLayout>

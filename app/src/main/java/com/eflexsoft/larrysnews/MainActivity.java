@@ -19,6 +19,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.eflexsoft.larrysnews.adapter.NewsAdapter;
@@ -53,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
     SwipeRefreshLayout swipeRefreshLayout;
 
     Toolbar toolbar;
+    ImageView fire;
+    TextView fireText;
+    Button tryAgain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +71,10 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         swipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        fire = findViewById(R.id.fire);
+        fireText = findViewById(R.id.fireMessage);
+        tryAgain = findViewById(R.id.fireTry);
 
         setSupportActionBar(toolbar);
 
@@ -131,13 +142,18 @@ public class MainActivity extends AppCompatActivity {
 
                 }
                 swipeRefreshLayout.setRefreshing(false);
-
+                fire.setVisibility(View.GONE);
+                fireText.setVisibility(View.GONE);
+                tryAgain.setVisibility(View.GONE);
             }
 
             @Override
             public void onFailure(Call<News> call, Throwable t) {
                 Toast.makeText(MainActivity.this, "unable to get news", Toast.LENGTH_SHORT).show();
                 swipeRefreshLayout.setRefreshing(false);
+                fire.setVisibility(View.VISIBLE);
+                fireText.setVisibility(View.VISIBLE);
+                tryAgain.setVisibility(View.VISIBLE);
             }
         });
 
@@ -170,8 +186,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getNewsWithKeyword(String keyword) {
+
         getNew(keyword);
 
     }
 
+    public void TryAgain(View view) {
+        swipeRefreshLayout.setRefreshing(true);
+        getNewsWithKeyword("");
+    }
 }
