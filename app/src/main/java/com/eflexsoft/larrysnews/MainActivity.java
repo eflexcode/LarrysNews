@@ -14,13 +14,17 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.Manifest;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +35,9 @@ import com.eflexsoft.larrysnews.api.ApiInterface;
 import com.eflexsoft.larrysnews.model.Article;
 import com.eflexsoft.larrysnews.model.News;
 import com.eflexsoft.larrysnews.utils.Utils;
+import com.startapp.sdk.ads.banner.Banner;
+import com.startapp.sdk.adsbase.StartAppAd;
+import com.startapp.sdk.adsbase.StartAppSDK;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,6 +50,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+
+import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -65,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FrameLayout container = findViewById(R.id.fragment_main);
 
         recyclerView = findViewById(R.id.newsRecycler);
         swipeRefreshLayout = findViewById(R.id.swipe);
@@ -95,6 +106,14 @@ public class MainActivity extends AppCompatActivity {
             EasyPermissions.requestPermissions(this, "First give Larry' New app internet permission", 15, Manifest.permission.INTERNET);
         }
 
+        StartAppSDK.init(this, "your apikey", true);
+        StartAppAd.disableSplash();
+        if (container != null && container.getChildCount() < 1) {
+            container.addView(new Banner(this), new FrameLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT, Gravity.CENTER));
+            StartAppAd.showAd(this);
+        }
+
+        StartAppAd.showAd(this);
 
     }
 
@@ -119,11 +138,11 @@ public class MainActivity extends AppCompatActivity {
 
         } else {
 
-            Map<String,String> map = new HashMap<>();
-            map.put("q",keyword);
-            map.put("language",Utils.getLanguage());
-            map.put("sortBy","publishedAt");
-            map.put("apiKey",ApiKey);
+            Map<String, String> map = new HashMap<>();
+            map.put("q", keyword);
+            map.put("language", Utils.getLanguage());
+            map.put("sortBy", "publishedAt");
+            map.put("apiKey", ApiKey);
 
             newsCall = apiInterface.searchNews(map);
 
@@ -154,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
                 fire.setVisibility(View.VISIBLE);
                 fireText.setVisibility(View.VISIBLE);
                 tryAgain.setVisibility(View.VISIBLE);
+                articleList.clear();
             }
         });
 
@@ -182,6 +202,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.about:
+                startActivity(new Intent(MainActivity.this, AboutActivity.class));
+                break;
+
+        }
         return true;
     }
 

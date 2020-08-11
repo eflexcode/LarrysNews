@@ -9,10 +9,9 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="?actionBarSize"
         android:elevation="10dp"
         app:title="Hot🔥News">
-
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -27,6 +26,7 @@
         android:id="@+id/swipe"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@id/fragment_main"
         android:layout_below="@id/divider">
 
         <androidx.recyclerview.widget.RecyclerView
@@ -42,37 +42,45 @@
 
 
     <ImageView
+        android:id="@+id/fire"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:visibility="gone"
         android:layout_centerInParent="true"
         android:src="@drawable/fire"
-        android:id="@+id/fire"/>
+        android:visibility="gone" />
 
     <TextView
+        android:id="@+id/fireMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#000"
-        android:text="Unable to connect please check your network"
         android:layout_below="@id/fire"
-        android:id="@+id/fireMessage"
-        android:visibility="gone"
+        android:gravity="center"
+        android:text="Unable to connect please check your network"
+        android:textColor="#000"
         android:textSize="20sp"
-        android:gravity="center"/>
+        android:visibility="gone" />
 
     <Button
+        android:id="@+id/fireTry"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_below="@id/fireMessage"
         android:layout_centerHorizontal="true"
-        android:textColor="#fff"
-        android:onClick="TryAgain"
-        android:visibility="gone"
-        android:id="@+id/fireTry"
         android:layout_marginTop="10dp"
-        android:textAllCaps="false"
-        android:textSize="18sp"
         android:background="@drawable/try_backgrond"
-        android:text="Try again"/>
+        android:onClick="TryAgain"
+        android:text="Try again"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:visibility="gone" />
 
+
+    <FrameLayout
+        android:id="@+id/fragment_main"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        />
 </RelativeLayout>

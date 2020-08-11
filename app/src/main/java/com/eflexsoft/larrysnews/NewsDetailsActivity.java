@@ -7,9 +7,11 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -26,6 +28,11 @@ import com.bumptech.glide.request.target.Target;
 import com.eflexsoft.larrysnews.utils.Utils;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.startapp.sdk.ads.banner.Banner;
+import com.startapp.sdk.adsbase.StartAppAd;
+import com.startapp.sdk.adsbase.StartAppSDK;
+
+import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
 public class NewsDetailsActivity extends AppCompatActivity {
 
@@ -56,6 +63,8 @@ public class NewsDetailsActivity extends AppCompatActivity {
        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
 
         intent = getIntent();
+
+        FrameLayout container = findViewById(R.id.fragment_main);
 
         appBarLayout = findViewById(R.id.appbar);
         w = findViewById(R.id.w);
@@ -117,6 +126,15 @@ public class NewsDetailsActivity extends AppCompatActivity {
         webView.loadUrl(getUrl);
 
         Toast.makeText(this, "Loading webPage", Toast.LENGTH_SHORT).show();
+
+        StartAppSDK.init(this, "207451295", true);
+        StartAppAd.disableSplash();
+        if (container != null && container.getChildCount() < 1) {
+            container.addView(new Banner(this), new FrameLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT, Gravity.CENTER));
+            StartAppAd.showAd(this);
+        }
+
+        StartAppAd.showAd(this);
 
     }
 
