@@ -125,9 +125,9 @@ public class NewsDetailsActivity extends AppCompatActivity {
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl(getUrl);
 
-        Toast.makeText(this, "Loading webPage", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Loading web page", Toast.LENGTH_SHORT).show();
 
-        StartAppSDK.init(this, "207451295", true);
+        StartAppSDK.init(this, "your api key", true);
         StartAppAd.disableSplash();
         if (container != null && container.getChildCount() < 1) {
             container.addView(new Banner(this), new FrameLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT, Gravity.CENTER));

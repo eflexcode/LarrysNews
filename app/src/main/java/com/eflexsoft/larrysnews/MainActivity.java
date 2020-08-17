@@ -57,12 +57,11 @@ public class MainActivity extends AppCompatActivity {
 
     Retrofit retrofit;
     ApiInterface apiInterface;
-    public static final String ApiKey = "your apiKey";
+    public static final String ApiKey = "your api key";
 
     RecyclerView recyclerView;
     NewsAdapter newsAdapter;
-    List<Article> articleList = new ArrayList<>();
-
+    List<Article> articleList ;
     SwipeRefreshLayout swipeRefreshLayout;
 
     Toolbar toolbar;
@@ -106,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
             EasyPermissions.requestPermissions(this, "First give Larry' New app internet permission", 15, Manifest.permission.INTERNET);
         }
 
-        StartAppSDK.init(this, "your apikey", true);
+        StartAppSDK.init(this, "your api key", true);
         StartAppAd.disableSplash();
         if (container != null && container.getChildCount() < 1) {
             container.addView(new Banner(this), new FrameLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT, Gravity.CENTER));
@@ -154,8 +153,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if (response.isSuccessful() && response.body().getArticles() != null) {
 
-                    articleList.clear();
-                    newsAdapter = new NewsAdapter(response.body().getArticles(), MainActivity.this);
+                   articleList = new ArrayList<>(response.body().getArticles());
+                    newsAdapter = new NewsAdapter(articleList, MainActivity.this);
                     recyclerView.setAdapter(newsAdapter);
                     Toast.makeText(MainActivity.this, "news gotten", Toast.LENGTH_SHORT).show();
 
