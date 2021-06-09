@@ -17,6 +17,13 @@ public interface ApiInterface {
             @Query("apiKey") String apikey
     );
 
+    @GET("top-headlines")
+    Call<News> getNewsWithCategory(
+            @Query("country") String country,
+            @Query("category") String category,
+            @Query("apiKey") String apikey
+    );
+
     @GET("everything")
     Call<News> searchNews(@QueryMap Map<String,String> searchMap);
 

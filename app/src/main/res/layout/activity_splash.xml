@@ -4,28 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashActivity">
+    android:background="#fff"
+    tools:context=".ui.SplashActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
         android:text="Hot🔥News"
-        android:textSize="30sp"
         android:textColor="#000"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:layout_centerInParent="true"/>
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="match_parent"
+    <ProgressBar
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Larry's News"
-        android:textSize="15sp"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"/>
+        android:layout_marginBottom="10dp" />
 
 </RelativeLayout>

@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -8,12 +8,36 @@
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
     </style>
 
-    <style name="Tran" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Tran" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+    </style>
+
+    <style name="customChipStyle" parent="Widget.MaterialComponents.Chip.Action">
+
+        <item name="chipBackgroundColor">@color/chip_background_color</item>
+        <item name="android:textColor">@color/chipTextColor</item>
+        <item name="checkedIconTint">@color/chipTextColor</item>
+        <item name="android:textSize">18sp</item>
+        <item name="chipStrokeColor">@color/darkgray</item>
+        <item name="chipStrokeWidth">1dp</item>
+<!--        <item name=""-->
+
+    </style>
+
+    <style name="customCountryChipStyle" parent="Widget.MaterialComponents.Chip.Filter">
+
+        <item name="chipBackgroundColor">@color/chip_background_color</item>
+        <item name="android:textColor">@color/chipTextColor</item>
+        <item name="checkedIconTint">@color/chipTextColor</item>
+        <item name="android:textSize">18sp</item>
+        <item name="chipStrokeColor">@color/darkgray</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <!--        <item name=""-->
+
     </style>
 
 </resources>

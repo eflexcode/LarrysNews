@@ -9,7 +9,7 @@
         app:showAsAction="always"/>
 
     <item android:id="@+id/about"
-        android:title="About"
+        android:title="License"
         android:icon="@drawable/ic_search" />
 
 </menu>

@@ -1,86 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:elevation="10dp"
-        app:title="Hot🔥News">
-
-    </androidx.appcompat.widget.Toolbar>
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_below="@id/toolbar"
-        android:background="#000" />
-
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipe"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/fragment_main"
-        android:layout_below="@id/divider">
+        tools:context=".ui.MainActivity">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/newsRecycler"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:background="#fff"
+                app:layout_scrollFlags="scroll|snap|enterAlways"
+                app:title="Hot🔥News" />
+
+            <HorizontalScrollView
+                android:id="@+id/chip_group_horizontal_scroll_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toolbar"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/category_chip_group"
+                        style="@style/customChipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:singleLine="true"
+                        app:singleSelection="true">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/general"
+                            style="@style/customChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/general"
+                            app:chipIcon="@drawable/ic_worldwide"
+                            app:chipStartPadding="10dp" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/science"
+                            style="@style/customChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/science"
+                            app:chipIcon="@drawable/ic_atom"
+                            app:chipStartPadding="10dp" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/business"
+                            style="@style/customChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/business"
+                            app:chipIcon="@drawable/ic_dollar"
+                            app:chipIconSize="20dp"
+                            app:chipStartPadding="10dp" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/entertainment"
+                            style="@style/customChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/entertainment"
+                            app:chipIcon="@drawable/ic_theater__1_"
+                            app:chipStartPadding="10dp" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/sports"
+                            style="@style/customChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sports"
+                            app:chipIcon="@drawable/ic_sport"
+                            app:chipStartPadding="10dp" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/technology"
+                            style="@style/customChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/technology"
+                            app:chipIcon="@drawable/ic_cpu__1_"
+                            app:chipStartPadding="10dp" />
+
+                    </com.google.android.material.chip.ChipGroup>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scrollIndicators="end"
-            android:scrollbarStyle="insideInset"
-            android:scrollbars="horizontal" />
+            android:background="@color/colorPrimary"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary">
 
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+                <com.todkars.shimmer.ShimmerRecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:orientation="horizontal"
+                    app:shimmer_recycler_item_count="20"
+                    app:shimmer_recycler_layout="@layout/shimmera_effect_layout" />
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+        <ImageView
+            android:id="@+id/fire"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_error2"
+            android:visibility="gone" />
 
-    <ImageView
-        android:id="@+id/fire"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_centerInParent="true"
-        android:src="@drawable/fire"
-        android:visibility="gone" />
+        <TextView
+            android:id="@+id/fireMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fire"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/capriola"
+            android:gravity="center"
+            android:text="Unable to connect please check your network"
+            android:textColor="@color/darkgray"
+            android:textSize="20sp"
+            android:visibility="gone" />
 
-    <TextView
-        android:id="@+id/fireMessage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/fire"
-        android:gravity="center"
-        android:text="Unable to connect please check your network"
-        android:textColor="#000"
-        android:textSize="20sp"
-        android:visibility="gone" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fireTry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fireMessage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/capriola"
+            android:onClick="TryAgain"
+            android:padding="10dp"
+            android:text="Try again"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:backgroundTint="@color/colorAccent"
+            app:cornerRadius="20dp"
+            app:rippleColor="@color/colorPrimary" />
 
-    <Button
-        android:id="@+id/fireTry"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_below="@id/fireMessage"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/try_backgrond"
-        android:onClick="TryAgain"
-        android:text="Try again"
-        android:textAllCaps="false"
-        android:textColor="#fff"
-        android:textSize="18sp"
-        android:visibility="gone" />
+                <FrameLayout
+                    android:id="@+id/fragment_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"/>
 
-
-    <FrameLayout
-        android:id="@+id/fragment_main"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="1dp"
-        />
-</RelativeLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

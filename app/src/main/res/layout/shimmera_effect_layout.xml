@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/first"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/new_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/darkgray"
+                android:scaleType="centerCrop"
+                android:src="@drawable/uk"
+                android:transitionName="img" />
+
+            <View
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/shimmera_effect_background"
+                app:layout_constraintBottom_toTopOf="@id/title2"
+                tools:layout_editor_absoluteX="20dp" />
+
+            <View
+                android:id="@+id/title2"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/shimmera_effect_background"
+                app:layout_constraintBottom_toTopOf="@id/author"
+                tools:layout_editor_absoluteX="20dp" />
+
+            <View
+                android:id="@+id/author"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shimmera_effect_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:layout_editor_absoluteX="20dp" />
+
+            <View
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/shimmera_effect_background"
+                android:orientation="horizontal"
+                android:padding="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </View>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

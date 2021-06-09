@@ -4,4 +4,15 @@
     <color name="colorPrimaryDark">#FFFFFF</color>
     <color name="colorAccent">#FFAB00</color>
     <color name="transparent">@android:color/transparent</color>
+    <color name="black">#000000</color>
+    <color name="darkgray">#B3B4B5</color>
+    <color name="lightgray">#D2D2D2</color>
+    <color name="lightestgray">#F1F1F1</color>
+
+    //chip
+
+    <color name="selectedChipColor">#20FFAB00</color>
+    <color name="chipColor">@color/lightgray</color>
+    <color name="chipTextColor">#000000</color>
+
 </resources>

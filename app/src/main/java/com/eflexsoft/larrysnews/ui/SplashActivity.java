@@ -1,10 +1,12 @@
-package com.eflexsoft.larrysnews;
+package com.eflexsoft.larrysnews.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+
+import com.eflexsoft.larrysnews.R;
 
 public class SplashActivity extends AppCompatActivity {
 

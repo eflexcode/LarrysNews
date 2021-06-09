@@ -36,10 +36,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/img"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginBottom="30dp"
                 android:singleLine="true"
+                android:layout_marginEnd="10dp"
                 android:text=""
                 android:textColor="#fff"
                 android:textSize="17sp" />
@@ -49,10 +50,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/img"
-                android:layout_margin="3dp"
                 android:fontFamily="sans-serif-light"
                 android:text=""
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:textColor="#000"
+                android:layout_marginTop="5dp"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -62,9 +65,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/title_text"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginBottom="15dp"
-                android:layout_marginRight="5dp"
                 android:text=""
                 android:textSize="15sp" />
 
@@ -109,14 +112,17 @@
                 android:layout_marginRight="5dp"
                 android:background="@drawable/dtae_backgrond"
                 android:orientation="horizontal"
-                android:padding="2dp">
+                android:padding="4dp">
 
                 <TextView
                     android:id="@+id/source"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
+                    android:layout_marginTop="2dp"
                     android:text=""
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginStart="3dp"
                     android:textColor="#EDEDED"
                     android:textSize="10sp"
                     android:textStyle="bold" />
@@ -125,12 +131,11 @@
                     android:id="@+id/time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="3dp"
                     android:layout_marginTop="2dp"
-                    android:layout_marginEnd="1dp"
-                    android:layout_marginRight="1dp"
+                    android:layout_marginEnd="5dp"
                     android:text=""
+                    android:layout_marginBottom="2dp"
                     android:textColor="#FAF9F9"
                     android:textSize="10sp"
                     android:textStyle="bold" />
@@ -143,7 +148,7 @@
                 android:layout_height="30dp"
                 android:layout_below="@id/content_text"
                 android:layout_alignParentEnd="true"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="10dp"
                 android:src="@drawable/ic_share_24"
                 android:layout_marginRight="13dp"
                 android:layout_alignParentRight="true" />

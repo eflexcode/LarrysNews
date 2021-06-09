@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Larry\'s News</string>
+    <string name="app_name">Daily news headlines</string>
+    <string name="txtCredits">https://newsapi.org/terms</string>
+    <string name="technology">Technology</string>
+    <string name="sports">Sports</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="business">Business</string>
+    <string name="science">Science</string>
+    <string name="general">General</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

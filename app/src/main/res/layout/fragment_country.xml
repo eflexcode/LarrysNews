@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.CountryFragmentBottomSheet">
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/capriola"
+        android:text="Select your country"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/country_chip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:checkedChip="@id/ng"
+        android:layout_margin="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_text"
+        app:selectionRequired="true"
+        app:singleLine="false"
+        android:maxHeight="50dp"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ae"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ae" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ar"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ar" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/at"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="At" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/au"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Au" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/be"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Be" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/bg"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bg" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/br"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Br" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ca"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ca" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ch"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ch" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cn"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cn" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/co"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Co" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cu"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cu" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cz"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cz" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/de"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="De" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/eg"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eg" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/fr"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fr" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/gb"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gb" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/gr"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gr" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/hk"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hk" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/hu"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hu" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/id"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Id" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ie"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ie" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/il"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Il" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/in"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="In" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/it"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="It" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/jp"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/kr"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kr" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/lt"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lt" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/lv"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lv" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ma"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ma" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/mx"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mx" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/my"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ng"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ng" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/nl"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nl" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/no"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/nz"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nz" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ph"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ph" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/pl"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pl" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/pt"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pt" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/Ro"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ro" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/Rs"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rs" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ru"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ru" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/sa"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sa" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/se"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Se" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/sg"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sg" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/si"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Si" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/sk"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sk" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/th"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Th" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/tr"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tr" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/tw"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tw" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ua"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ua" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/us"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Us" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ve"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ve" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/za"
+            style="@style/customCountryChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Za" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toBottomOf="@id/country_chip"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:backgroundTint="@color/colorAccent"
+        android:text="Apply"
+        android:layout_marginBottom="30dp"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:cornerRadius="30dp"
+        android:fontFamily="@font/capriola"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
