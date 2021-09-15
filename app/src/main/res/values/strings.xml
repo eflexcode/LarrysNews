@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Daily news headlines</string>
+    <string name="app_name">Breaking News</string>
     <string name="txtCredits">https://newsapi.org/terms</string>
     <string name="technology">Technology</string>
     <string name="sports">Sports</string>

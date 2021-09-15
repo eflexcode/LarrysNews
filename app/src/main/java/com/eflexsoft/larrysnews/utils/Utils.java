@@ -1,4 +1,4 @@
-package com.eflexsoft.larrysnews.utils;
+  package com.eflexsoft.larrysnews.utils;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -24,7 +24,6 @@ public class Utils {
             new ColorDrawable(Color.parseColor("#9400D3")),
             new ColorDrawable(Color.parseColor("#000000")),
             new ColorDrawable(Color.parseColor("#FF8C00"))
-
 
     };
 
